@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microinvestigación Formularios - Ejercicio 1</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        width: 100vw;
+        min-height: 100vh;
+
+
+        background-color: white;
+        color: black;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login-form-container {
+        width: 400px;
+        padding: 20px;
+        background-color: #34495e;
+        border-radius: 10px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        gap: 10px;
+    }
+
+    .form-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="login-form-container">
+            <div class="form-group">
+                <form action="">
+                    <div class="form-title">
+                        <h3>Iniciar Sesión</h3>
+                    </div>
+                    <div class="form-inputs">
+                        <div>
+                            <label for="pass">Contraseña: </label>
+                            <input type="password">
+                        </div>
+                        <div>
+                            <label for="telefono">Telefono: </label>
+                            <input type="tel">
+                        </div>
+                        <div>
+                            <label for="edad">Edad: </label>
+                            <input type="number">
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+                            <h4>Modalidad preferida de clases:</h4>
+                            <div>
+                                <label for="">Presencial: </label>
+                                <input type="radio" name="modalidad" value="presencial">
+                            </div>
+                            <div>
+                                <label for="">Virtual: </label>
+                                <input type="radio" name="modalidad" value="virtual">
+                            </div>
+                            <div>
+                                <label for="">Indistinto: </label>
+                                <input type="radio" name="modalidad" value="indistinto">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login-form-container">
+            <div class="form-title">
+                <h3 style="color: white;">Otro form</h3>
+            </div>
+            <div class="form-group">
+                <form action="">
+                    <div class="form-inputs">
+                        <div>
+                            <label for="Nombre">Nombre:</label>
+                            <input type="text" name="nombre" placeholder="Ej: Juancito" required>
+                        </div>
+                        <div>
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Ej. Pérez" required>
+                        </div>
+                        <div>
+                            <label for="edad">Edad (18-100):</label>
+                            <input type="number" id="edad" name="edad" min="18" max="100">
+                        </div>
+                        <div>
+                            <label for="comentario">Comentario (máx. 50 caracteres):</label>
+                            <textarea id="comentario" name="comentario" maxlength="50"
+                                placeholder="Escribe tu opinión aquí..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

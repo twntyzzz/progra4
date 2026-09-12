@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Clase 10-09 | Formulario Basico</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-content">
+            <div class="form-header">
+                <div class="logo"></div>
+                <h1>Formulario Basico</h1>
+                <p>Complete sus datos para continuar</p>
+            </div>
+            <form action="POST">
+                <div class="form-inputs-container">
+                    <div class="form-inputs-container-2">
+                        <div class="form-label-container">
+                            <label class="form-label" for="nombre" >Nombre: </label>
+                        </div>
+                        <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="form-inputs-container-2">
+                        <div class="form-label">
+                            <label class="form-label" for="correo">Correo Electronico: </label>
+                        </div>
+                        <input class="form-input" type="email" id="correo" name="correo" placeholder="Ingrese su correo electronico">
+                    </div>
+                </div>
+                <div class="form-button-container">
+                    <button class="form-button" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
