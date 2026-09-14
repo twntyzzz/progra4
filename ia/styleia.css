@@ -1,0 +1,207 @@
+/* --- Variables y Configuración Inicial --- */
+:root {
+    --bg-page: #f4f7f6;
+    --bg-form: #ffffff;
+    --bg-fieldset: #fafafa;
+    --border-color: #d1d5db;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --secondary-hover: #475569;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* --- Contenedor Principal --- */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-form);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.form-container > p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+/* --- Fieldsets y Leyendas (La Arquitectura Visual) --- */
+fieldset {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-fieldset);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s ease;
+}
+
+fieldset:hover {
+    border-color: #9ca3af;
+}
+
+legend {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* --- Controles del Formulario --- */
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background-color: #fff;
+    transition: outline 0.2s, border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* --- Agrupaciones de Radio y Checkbox --- */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.radio-group label, .checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.instruccion {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* --- Bloque de Confirmación (Términos) --- */
+.confirmacion-block {
+    background-color: #f8fafc;
+    border-left: 4px solid var(--primary-color);
+}
+
+.confirmacion-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.terminos-caja {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    height: 120px;
+    overflow-y: scroll;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.confirmacion label {
+    font-weight: 600;
+}
+
+/* --- Botones --- */
+.botones-accion {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-enviar {
+    background-color: var(--primary-color);
+    color: white;
+    flex: 2;
+}
+
+.btn-enviar:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-limpiar {
+    background-color: var(--secondary-color);
+    color: white;
+    flex: 1;
+}
+
+.btn-limpiar:hover {
+    background-color: var(--secondary-hover);
+}

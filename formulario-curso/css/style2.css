@@ -44,7 +44,10 @@ body{
     box-sizing: border-box;
 }
 
-.form-group input[type="radio"] {
+/* Excepciones para que radios y checkboxes no se estiren al 100% */
+.form-group input[type="radio"],
+.form-group input[type="checkbox"],
+.form-group input[type="range"] {
     width: auto;
 }
 
@@ -71,11 +74,8 @@ body{
     margin-top: 10px;
 }
 
-.form-group input[type="checkbox"] {
-    width: auto;
-}
-
-checkbox-option {
+/* Se corrigió la falta del punto (.) en el selector de clase */
+.checkbox-option {
     display: flex;
     align-items: center;
     gap: 5px;
