@@ -9,10 +9,111 @@ body{
     background: var(--fondo);
 }
 
-header{
+.titulo{
+    color: var(--principal);
+    text-align: center;
+}
+
+.descripcion{
+    text-align: center;
+    color: var(--texto);
+}
+
+.group{
+    border-color: #174a70;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;  
+}
+
+.form-row-full{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  flex: 1; 
+  gap: 5px;
+}
+
+.form-group input, textarea{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+}
+
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.radio-option {
+    display: flex;
     align-items: center;
+    gap: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-submit {
+    background-color: var(--principal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0f2e4a;
+}
+
+.btn-reset {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}  
+
+.btn-reset:hover {
+    background-color: #999;
 }
 
 main{

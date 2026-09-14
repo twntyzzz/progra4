@@ -1,261 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style2.css">
     <title>Formulario curso</title>
 </head>
+
 <body>
     <header>
-        <h1>
+        <h1 class="titulo">
             Formulario de inscripcion a un curso
         </h1>
-        <p>
+        <p class="descripcion">
             Complete los datos para inscribirse en el curso.
         </p>
     </header>
 
     <main>
         <form action="POST">
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Datos Personales
                 </legend>
-                <label for="nombre">Nombre: </label>
-                <input id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre">
-
-                <br><br>
-
-                <label for="apellido">Apellido:</label>
-                <input id="apellido" name="apellido" type="text" placeholder="Ingrese su apellido">
-
-                <br><br>
-
-                <label for="nro_doc">Numero de documento:</label>
-                <input type="number" id="nro_doc" name="nro_doc" placeholder="Ingrese su numero de documento">
-
-                <br><br>
-
-                <label for="fecha_nacimiento">
-                    Fecha de nacimiento:
-                </label>
-                <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
-
-                <br><br>
-
-                <label for="correo_electronico">
-                    Correo electronico: 
-                </label>
-                <input type="email" name="correo_electronico" id="correo_electronico">
-
-                <br><br>
-
-                <label for="nro_telefono">
-                    Numero de telefono:
-                </label>
-                <input type="tel" id="nro_telefono" name="nro_telefono">
-
-                <br><br>
-
-                <label for="">
-                    Genero:
-                </label>
-
-                <br><br>
-
-                <label>
-                    <input type="radio" name="genero" value="mas"> Masculino
-                </label>
-
-                <label>
-                    <input type="radio" name="genero" value="fem">
-                    Femenino
-                </label>
-
-                <label>
-                    <input type="radio" name="genero" value="otr">
-                    Otro
-                </label>
-
-                <br><br>
-                <label >
-                    Pais de residencia
-                    <input type="text" name="pais">
-                </label>
-
-
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                </div>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="documento">Documento:</label>
+                        <input name="documento" id="documento" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" name="telefono" id="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electronico:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="genero" id="genero">Genero:</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <label for="masculino">
+                                    <input type="radio" name="genero" id="masculino" value="masculino">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <label for="femenino">
+                                    <input type="radio" name="genero" id="femenino" value="femenino">
+                                    Femenino
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <label for="otro">
+                                    <input type="radio" name="genero" id="otro" value="otro">
+                                    Otro
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="pais">Pais:</label>
+                        <select name="pais" id="pais">
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="chile">Chile</option>
+                            <option value="uruguay">Uruguay</option>
+                            <option value="paraguay">Paraguay</option>
+                        </select>
+                    </div>
+                </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Datos del curso
                 </legend>
-                <label>
-                    Curso a inscribirse <input type="text">
-                </label>
-                <br><br>
-
-                <label>
-                    Modalidad
-                    <select name="modalidad" id="modalidad">
-                        <option value="presencial">presencial</option>
-                        <option value="virtual">virtual</option>
-                        <option value="hibrido">hibrido</option>
-                    </select>
-                </label>
-                <br><br>
-                <label>
-                    Turno
-                    <select name="turno" id="turno">
-                        <option value="manhana">mañana</option>
-                        <option value="tarde">tarde</option>
-                        <option value="noche">noche</option>
-                    </select>
-                </label>
-                <br><br>
-                <label>
-                    Fecha de inicio
-                    <input type="date">
-                </label>
-                <br><br>
-                <label>
-                    Horas aproximadas en el curso
-                    <input type="time">
-                </label>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="curso_deseado">Escriba el curso a inscribirse:</label>
+                        <input name="curso_deseado" type="text">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalidad">Elija la modalidad:</label>
+                        <select name="modalidad" id="modalidad">
+                            <option value="presencial">Presencial
+                            </option>
+                            <option value="virtual">Virtual
+                            </option>
+                            <option value="hibrida">Hibrida</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="turno">Elija su turno</label>
+                        <select name="turno" id="turno">
+                            <option value="manhana">Mañana</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noche">Noche</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="horas_aproximadas">Cuantas horas podrá dedicar al curso</label>
+                        <input type="number" name="horas_aproximadas" id="horas_aproximadas">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_inicio">
+                            Seleccione la fecha a iniciar el curso
+                        </label>
+                        <input type="date" name="fecha_inicio" id="fecha_inicio">
+                    </div>
+                </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Conocimientos previos
                 </legend>
-                <label >
-                        seleccione uno o varios conocimientos
-                    <label>
-                        <br><br>
-                        <input type="checkbox" name="conocimiento" id="1">
-                        html
-                    </label>
-                    <br><br>
-                    <label>
-                        <input type="checkbox" name="conocimiento" id="2">
-                        css
-                    </label>
-                    <br><br>
-                    <label>
-                        <input type="checkbox" name="conocimiento" id="1">
-                        javascript
-                    </label>
-                    <br><br>
-                    <label>
-                        <input type="checkbox" name="conocimiento" id="1">
-                        programacion
-                    </label>
-                    <br><br>
-                    <label>
-                        <input type="checkbox" name="conocimiento" id="1">
-                        base de datos
-                    </label>
-                    <br><br>
-                    <label>
-                        <input type="checkbox" name="conocimiento" id="1">
-                        ninguno
-                    </label>
-                    <br><br>
-                </label>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="conocimientos">
+                            Seleccione sus conociemientos previos (Puede marcar mas de uno)
+                        </label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <label for="html">
+                                    <input type="checkbox" name="conocimientos" id="html" value="html">
+                                    HTML
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="css">
+                                    <input type="checkbox" name="conocimientos" id="css" value="css">
+                                    CSS
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="javascript">
+                                    <input type="checkbox" name="conocimientos" id="javascript" value="javascript">
+                                    JavaScript
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="db">
+                                    <input type="checkbox" name="conocimientos" id="db" value="db">
+                                    Base de datos
+                                </label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="programacion">
+                                    <input type="checkbox" name="conocimientos" id="programacion" value="programacion">
+                                    Programación
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Nivel de experiencia
                 </legend>
-                <label>
-                    Años de experencia
-                    <input type="number" min="0" max="40">
-                </label>
-                <br><br>
-
-                <label>
-                    nivel de conocimiento informatico
-                    <input type="number" min="1" max="10">
-                </label>
-                <br><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="anhos_experiencia">
+                            Inserte sus años de experiencia:
+                            <input type="number" name="anhos_experiencia" id="anhos_experiencia" max="40">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="nivel_conocimiento">
+                            Inserte su nivel de conocimiento (1 - 10)
+                            <input type="number" name="nivel_conocimiento" id="nivel_conocimiento" min="1" max="10">
+                        </label>
+                    </div>
+                </div>
 
             </fieldset>
 
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Informacion Adicional
                 </legend>
-                <label>
-                    Profesion u ocupacion
-                    <input type="text">
-                </label>
-                <br><br>
-
-                <label>
-                    Empresa donde trabaja
-                    <input type="text">
-                </label>
-                <br><br>
-
-                <label>
-                    pagina web personal
-                    <input type="text">
-                </label>
-                <br><br>
-
-                <label>
-                    Porque desea realizar el curso?
-                    <textarea name="porque" id="porque">
-
-                    </textarea>
-                </label>
-                <br><br>
-
-                <label>
-                    Adjunte su curricuum
-                    <input type="file">
-                </label>
-                <br><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="profesion">
+                            Profesión
+                        </label>
+                        <input type="text" name="profesion">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" name="empresa">
+                    </div>
+                </div>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="pagina_web">Pagina web personal</label>
+                        <input type="text" name="pagina_web">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto_opcional">Explica brevemente por qué desea realizar el curso</label>
+                        <textarea name="texto_opcional" id="texto_opcional" maxlength="200"></textarea>
+                    </div>
+                </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="group">
                 <legend>
                     Preferencias de comunicacion
                 </legend>
-                        <label >
-                        seleccione uno o varios conocimientos
-                    <label>
-                        <br><br>
-                        <input type="checkbox" name="comu" id="1">
-                        Correo electronico
-                    </label>
-                    <br><br>
-
-                    <label>
-                        <input type="checkbox" name="comu" id="2">
-                        Whatsapp
-                    </label>
-                    <br><br>
-
-                    <label>
-                        <input type="checkbox" name="comu" id="1">
-                        Llamada
-                    </label>
-                    <br><br>
-
-
-                </label>
-                <br><br>
-
-                <label >
-                    <input type="checkbox" name="comu" id="1">
-                        Quiere recibir mas info
-                </label>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <label for="preferencia_com">Elige por donde quiere ser notificado acerca de cursos disponibles</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <label for="mail"><input type="checkbox" name="mail" id="mail">Correo Electronico</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="whatsapp"><input type="checkbox" name="whatsapp" id="whatsapp">Whatsapp</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="llamada"><input type="checkbox" name="llamada" id="llamada">Llamada</label>
+                            </div>
+                        </div>
+                        <div class="checkbox-group permiso" style="background-color: rgba(95, 158, 160, 0.309); padding: 10px; border-radius: 5px;">
+                            <div class="checkbox-option">
+                                <label for="permiso" id="permiso"><input type="checkbox" name="permiso" id="permiso">Acepto recibir notificaciones de cursos disponibles</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
+            <fieldset class="group">
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <h3>Terminos y Condiciones</h3>
+                        <p>lore ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="form-row-full">
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <label for="terminos"><input type="checkbox" name="terminos" id="terminos" required>Acepto los terminos y condiciones</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-row">
+                <div class="form-group">
+                    <button class="btn-submit" type="submit">Enviar</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn-reset" type="reset">Limpiar</button>
+                </div>
+            </div>
         </form>
     </main>
-    
+
 </body>
+
 </html>
