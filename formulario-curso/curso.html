@@ -10,15 +10,19 @@
 
 <body>
     <header>
-        <h1 class="titulo">
-            Formulario de inscripcion a un curso
-        </h1>
-        <p class="descripcion">
-            Complete los datos para inscribirse en el curso.
-        </p>
+    
     </header>
 
     <main>
+        <div class="header-content">
+            <h1 class="titulo">
+            Formulario de inscripcion a un curso
+            </h1>
+            <div class="descripcion">
+                <p>Complete el formulario para inscribirse en el curso deseado</p>
+            </div>
+        </div>
+        
         <form action="POST">
             <fieldset class="group">
                 <legend>
@@ -27,31 +31,31 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" required>
+                        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
                     </div>
                 </div>
                 <div class="form-row-full">
                     <div class="form-group">
                         <label for="documento">Documento:</label>
-                        <input name="documento" id="documento" type="text" required>
+                        <input name="documento" id="documento" type="text" placeholder="Ingrese su documento" required>
                     </div>
                     <div class="form-group">
                         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Seleccione su fecha de nacimiento">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="telefono">Telefono:</label>
-                        <input type="tel" name="telefono" id="telefono">
+                        <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su teléfono">
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electronico:</label>
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico" required>
                     </div>
                 </div>
                 <div class="form-row-full">
@@ -60,19 +64,19 @@
                         <div class="radio-group">
                             <div class="radio-option">
                                 <label for="masculino">
-                                    <input type="radio" name="genero" id="masculino" value="masculino">
+                                    <input type="radio" name="genero" id="masculino" value="masculino" placeholder="Seleccione su género">
                                     Masculino
                                 </label>
                             </div>
                             <div class="radio-option">
                                 <label for="femenino">
-                                    <input type="radio" name="genero" id="femenino" value="femenino">
+                                    <input type="radio" name="genero" id="femenino" value="femenino" placeholder="Seleccione su género">
                                     Femenino
                                 </label>
                             </div>
                             <div class="radio-option">
                                 <label for="otro">
-                                    <input type="radio" name="genero" id="otro" value="otro">
+                                    <input type="radio" name="genero" id="otro" value="otro" placeholder="Seleccione su género">
                                     Otro
                                 </label>
                             </div>
@@ -100,7 +104,7 @@
                 <div class="form-row-full">
                     <div class="form-group">
                         <label for="curso_deseado">Escriba el curso a inscribirse:</label>
-                        <input name="curso_deseado" type="text">
+                        <input name="curso_deseado" type="text" placeholder="Ingrese el curso deseado">
                     </div>
                 </div>
                 <div class="form-row">
@@ -126,13 +130,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="horas_aproximadas">Cuantas horas podrá dedicar al curso</label>
-                        <input type="number" name="horas_aproximadas" id="horas_aproximadas">
+                        <input type="number" name="horas_aproximadas" id="horas_aproximadas" placeholder="Ingrese la cantidad de horas">
                     </div>
                     <div class="form-group">
                         <label for="fecha_inicio">
                             Seleccione la fecha a iniciar el curso
                         </label>
-                        <input type="date" name="fecha_inicio" id="fecha_inicio">
+                        <input type="date" name="fecha_inicio" id="fecha_inicio" placeholder="Seleccione la fecha de inicio">
                     </div>
                 </div>
             </fieldset>
@@ -149,31 +153,31 @@
                         <div class="checkbox-group">
                             <div class="checkbox-option">
                                 <label for="html">
-                                    <input type="checkbox" name="conocimientos" id="html" value="html">
+                                    <input type="checkbox" name="conocimientos" id="html" value="html" placeholder="Seleccione sus conocimientos">
                                     HTML
                                 </label>
                             </div>
                             <div class="checkbox-option">
                                 <label for="css">
-                                    <input type="checkbox" name="conocimientos" id="css" value="css">
+                                    <input type="checkbox" name="conocimientos" id="css" value="css" placeholder="Seleccione sus conocimientos">
                                     CSS
                                 </label>
                             </div>
                             <div class="checkbox-option">
                                 <label for="javascript">
-                                    <input type="checkbox" name="conocimientos" id="javascript" value="javascript">
+                                    <input type="checkbox" name="conocimientos" id="javascript" value="javascript" placeholder="Seleccione sus conocimientos">
                                     JavaScript
                                 </label>
                             </div>
                             <div class="checkbox-option">
                                 <label for="db">
-                                    <input type="checkbox" name="conocimientos" id="db" value="db">
+                                    <input type="checkbox" name="conocimientos" id="db" value="db" placeholder="Seleccione sus conocimientos">
                                     Base de datos
                                 </label>
                             </div>
                             <div class="checkbox-option">
                                 <label for="programacion">
-                                    <input type="checkbox" name="conocimientos" id="programacion" value="programacion">
+                                    <input type="checkbox" name="conocimientos" id="programacion" value="programacion" placeholder="Seleccione sus conocimientos">
                                     Programación
                                 </label>
                             </div>
@@ -190,13 +194,13 @@
                     <div class="form-group">
                         <label for="anhos_experiencia">
                             Inserte sus años de experiencia:
-                            <input type="number" name="anhos_experiencia" id="anhos_experiencia" max="40">
+                            <input type="number" name="anhos_experiencia" id="anhos_experiencia" placeholder="Ingrese sus años de experiencia" max="40">
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="nivel_conocimiento">
                             Inserte su nivel de conocimiento (1 - 10)
-                            <input type="number" name="nivel_conocimiento" id="nivel_conocimiento" min="1" max="10">
+                            <input type="number" name="nivel_conocimiento" id="nivel_conocimiento" placeholder="Ingrese un nivel del 1 al 10" min="1" max="10">
                         </label>
                     </div>
                 </div>
@@ -212,17 +216,17 @@
                         <label for="profesion">
                             Profesión
                         </label>
-                        <input type="text" name="profesion">
+                        <input type="text" name="profesion" placeholder="Ingrese su profesión">
                     </div>
                     <div class="form-group">
                         <label for="empresa">Empresa</label>
-                        <input type="text" name="empresa">
+                        <input type="text" name="empresa" placeholder="Ingrese su empresa">
                     </div>
                 </div>
                 <div class="form-row-full">
                     <div class="form-group">
                         <label for="pagina_web">Pagina web personal</label>
-                        <input type="text" name="pagina_web">
+                        <input type="text" name="pagina_web" placeholder="Ingrese su página web">
                     </div>
                     <div class="form-group">
                         <label for="texto_opcional">Explica brevemente por qué desea realizar el curso</label>
@@ -240,18 +244,18 @@
                         <label for="preferencia_com">Elige por donde quiere ser notificado acerca de cursos disponibles</label>
                         <div class="checkbox-group">
                             <div class="checkbox-option">
-                                <label for="mail"><input type="checkbox" name="mail" id="mail">Correo Electronico</label>
+                                <label for="mail"><input type="checkbox" name="mail" id="mail" placeholder="Seleccione un medio de contacto">Correo Electronico</label>
                             </div>
                             <div class="checkbox-option">
-                                <label for="whatsapp"><input type="checkbox" name="whatsapp" id="whatsapp">Whatsapp</label>
+                                <label for="whatsapp"><input type="checkbox" name="whatsapp" id="whatsapp" placeholder="Seleccione un medio de contacto">Whatsapp</label>
                             </div>
                             <div class="checkbox-option">
-                                <label for="llamada"><input type="checkbox" name="llamada" id="llamada">Llamada</label>
+                                <label for="llamada"><input type="checkbox" name="llamada" id="llamada" placeholder="Seleccione un medio de contacto">Llamada</label>
                             </div>
                         </div>
                         <div class="checkbox-group permiso" style="background-color: rgba(95, 158, 160, 0.309); padding: 10px; border-radius: 5px;">
                             <div class="checkbox-option">
-                                <label for="permiso" id="permiso"><input type="checkbox" name="permiso" id="permiso">Acepto recibir notificaciones de cursos disponibles</label>
+                                <label for="permiso" id="permiso"><input type="checkbox" name="permiso" id="permiso" placeholder="Acepte recibir notificaciones">Acepto recibir notificaciones de cursos disponibles</label>
                             </div>
                         </div>
                     </div>
@@ -267,7 +271,7 @@
                 <div class="form-row-full">
                     <div class="form-group">
                         <div class="checkbox-group">
-                            <label for="terminos"><input type="checkbox" name="terminos" id="terminos" required>Acepto los terminos y condiciones</label>
+                            <label for="terminos"><input type="checkbox" name="terminos" id="terminos" placeholder="Acepte los términos y condiciones" required>Acepto los terminos y condiciones</label>
                         </div>
                     </div>
                 </div>

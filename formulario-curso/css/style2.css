@@ -9,15 +9,6 @@ body{
     background: var(--fondo);
 }
 
-.titulo{
-    color: var(--principal);
-    text-align: center;
-}
-
-.descripcion{
-    text-align: center;
-    color: var(--texto);
-}
 
 .group{
     border-color: #174a70;
@@ -117,12 +108,38 @@ checkbox-option {
 }
 
 main{
-    width: 400px;
+    width: 800px;
     margin: 50px auto;
     padding: 30px;
     background: white;
     border-radius: 10px;
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.header-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--principal);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
+.descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(95, 158, 160, 0.309);
+    padding: 10px; 
+    border-radius: 10px;
+}
