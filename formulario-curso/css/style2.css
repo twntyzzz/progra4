@@ -14,6 +14,7 @@ body{
     border-color: #174a70;
     padding: 10px;
     margin-bottom: 15px;
+    border-radius: 5px;
 }
 
 .form-row {
@@ -44,7 +45,7 @@ body{
     box-sizing: border-box;
 }
 
-/* Excepciones para que radios y checkboxes no se estiren al 100% */
+
 .form-group input[type="radio"],
 .form-group input[type="checkbox"],
 .form-group input[type="range"] {
@@ -74,7 +75,6 @@ body{
     margin-top: 10px;
 }
 
-/* Se corrigió la falta del punto (.) en el selector de clase */
 .checkbox-option {
     display: flex;
     align-items: center;
@@ -142,4 +142,14 @@ header{
     background-color: rgba(95, 158, 160, 0.309);
     padding: 10px; 
     border-radius: 10px;
+}
+
+.legend-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--fondo);
+    margin-bottom: 10px;
+    background-color: var(--principal);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
