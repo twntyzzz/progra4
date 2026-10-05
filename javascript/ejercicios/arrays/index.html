@@ -8,8 +8,22 @@
     <title>Arrays</title>
 </head>
 <body class="container py-4">
-    <div class="container shadow-lg p-4" style="max-width: 600px; background-color: white; border-radius: 10px;">
-        <h1 class="text-center "></h1>
+    <div class="container shadow-lg p-4" style="max-width: 800px; background-color: white; border-radius: 10px;">
+        <h1 class="text-center">Arrays - mostrar el primer y el ultimo elemento de un array</h1>
+        <div class="d-flex gap-2 mt-3">
+            <div class="container p-3 shadow w-50" style="border-radius: 10px; background-color: floralwhite; color: black;">
+                <h3 class="text-center">Primer elemento</h3>
+                <h4 class="text-center" id="primerElemento"></h4>
+            </div>
+            <div class="container p-3 shadow w-50" style="border-radius: 10px; background-color: firebrick; color: white;">
+                <h3 class="text-center">Segundo elemento</h3>
+                <h4 class="text-center" id="ultimoElemento"></h4>
+            </div>           
+        </div>
+        <button class="btn btn-success w-100 mt-3" onclick="mostrarElementos()">
+                Mostrar elementos
+        </button>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
