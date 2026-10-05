@@ -25,8 +25,8 @@ function iniciarJuego() {
     document.getElementById("numero").disabled = false;
     document.getElementById("btnProbar").disabled = false;
 
-    // Mostramos el número 3 en el contador de la pantalla
-    document.getElementById("intentos").innerText = intentos;
+    // Mostramos los 3 corazones en pantalla
+    mostrarIntentos();
 
     // Ocultamos el mensaje de alerta cambiando sus clases a "alert d-none"
     let mensaje = document.getElementById("mensaje");
@@ -35,6 +35,28 @@ function iniciarJuego() {
 
     // Vaciamos el contenido del historial
     document.getElementById("historial").innerHTML = "";
+}
+
+// ==========================================
+// FUNCIÓN: mostrarIntentos
+// ==========================================
+// Muestra 3 corazones (vidas) y cuando se pierde un intento se transforma en un cráneo
+function mostrarIntentos() {
+    let contenedor = document.getElementById("intentos");
+    let totalIntentos = 3;
+    let html = "";
+
+    for (let i = 0; i < totalIntentos; i++) {
+        if (i < intentos) {
+            // Corazón rojo activo de Bootstrap Icons
+            html += '<i class="bi bi-heart-fill text-danger me-1"></i>';
+        } else {
+            // Cráneo de esqueleto por intento perdido
+            html += '<i class="fa-solid fa-skull text-secondary me-1"></i>';
+        }
+    }
+
+    contenedor.innerHTML = html;
 }
 
 // ==========================================
@@ -53,13 +75,13 @@ function probar() {
     // Verificamos que sea un número válido y esté entre 1 y 100
     if (isNaN(numero) || numero < 1 || numero > 100) {
         mensaje.className = "alert alert-warning";
-        mensaje.innerText = "Ingresa un número válido entre 1 y 100.";
+        mensaje.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> Ingresa un número válido entre 1 y 100.';
         return; // Corta la función sin gastar intento
     }
 
-    // Si es válido, descontamos un intento y lo mostramos
+    // Si es válido, descontamos un intento y actualizamos los corazones/calaveras
     intentos--;
-    document.getElementById("intentos").innerText = intentos;
+    mostrarIntentos();
 
     // ==========================================
     // CREAR ELEMENTO CON createElement() Y appendChild()
@@ -74,10 +96,10 @@ function probar() {
     // CASO 1: El usuario acertó el número
     if (numero === numeroSecreto) {
         mensaje.className = "alert alert-success";
-        mensaje.innerText = `¡Acertaste! El número era ${numeroSecreto}.`;
+        mensaje.innerHTML = `<i class="bi bi-trophy-fill"></i> ¡Acertaste! El número era ${numeroSecreto}.`;
 
-        // Asignamos el texto al <li> creado
-        item.innerText = `Intento con el ${numero} - ¡Acertaste!`;
+        // Asignamos el texto y el ícono al <li> creado
+        item.innerHTML = `<i class="bi bi-check-circle-fill text-success"></i> Intento con el ${numero} - ¡Acertaste!`;
         // Insertamos el <li> dentro del <ul> usando appendChild()
         lista.appendChild(item);
 
@@ -89,12 +111,12 @@ function probar() {
     } else if (intentos > 0) {
         if (numero > numeroSecreto) {
             mensaje.className = "alert alert-info";
-            mensaje.innerText = "Te pasaste.";
-            item.innerText = `Intento con el ${numero} - Te pasaste`;
+            mensaje.innerHTML = '<i class="bi bi-arrow-down-circle-fill"></i> Te pasaste.';
+            item.innerHTML = `<i class="bi bi-arrow-down-circle text-primary"></i> Intento con el ${numero} - Te pasaste`;
         } else {
             mensaje.className = "alert alert-info";
-            mensaje.innerText = "Te faltó.";
-            item.innerText = `Intento con el ${numero} - Te faltó`;
+            mensaje.innerHTML = '<i class="bi bi-arrow-up-circle-fill"></i> Te faltó.';
+            item.innerHTML = `<i class="bi bi-arrow-up-circle text-info"></i> Intento con el ${numero} - Te faltó`;
         }
 
         // Agregamos el <li> al <ul> con appendChild()
@@ -103,9 +125,9 @@ function probar() {
         // CASO 3: No acertó y se le acabaron los 3 intentos
     } else {
         mensaje.className = "alert alert-danger";
-        mensaje.innerText = `No acertaste. El número era ${numeroSecreto}.`;
+        mensaje.innerHTML = `<i class="bi bi-x-circle-fill"></i> No acertaste. El número era ${numeroSecreto}.`;
 
-        item.innerText = `Intento con el ${numero} - Fallaste`;
+        item.innerHTML = `<i class="bi bi-x-circle-fill text-danger"></i> Intento con el ${numero} - Fallaste`;
         lista.appendChild(item);
 
         // Deshabilitamos los controles al perder

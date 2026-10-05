@@ -25,8 +25,8 @@ setInterval(function () {
     let ahora = new Date();
     
     // '.toLocaleTimeString()' convierte esa hora en un formato lindo para humanos: "14:35:08"
-    // Buscamos el elemento con id="reloj" en el HTML y le cambiamos su texto.
-    document.getElementById("reloj").innerText = ahora.toLocaleTimeString();
+    // Buscamos el elemento con id="reloj" en el HTML y le cambiamos su texto con el icono
+    document.getElementById("reloj").innerHTML = `<i class="bi bi-clock"></i> ${ahora.toLocaleTimeString()}`;
 }, 1000);
 
 
@@ -132,7 +132,7 @@ function registrarEstudiante() {
     if (nombre === "" || isNaN(edad) || edad <= 0 || isNaN(calificacion) || calificacion < 0 || calificacion > 100) {
         // Le sacamos la clase 'd-none' para que la alerta roja se haga visible en pantalla
         cajaAlerta.className = "alert alert-danger mb-3";
-        cajaAlerta.innerText = "Error: Verifica que el nombre no esté vacío, la edad sea mayor a 0 y la nota esté entre 0 y 100.";
+        cajaAlerta.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> Error: Verifica que el nombre no esté vacío, la edad sea mayor a 0 y la nota esté entre 0 y 100.';
         // 'return' frena todo y no deja continuar, así NO guardamos datos rotos en la lista
         return;
     }
@@ -182,9 +182,9 @@ function renderizarTabla() {
         // REQUISITO 4: Si aprobó le ponemos etiqueta verde, si reprobó le ponemos etiqueta roja
         let estadoBadge = "";
         if (aprobado) {
-            estadoBadge = '<span class="badge bg-success">APROBADO</span>';
+            estadoBadge = '<span class="badge bg-success"><i class="bi bi-check-circle-fill"></i> APROBADO</span>';
         } else {
-            estadoBadge = '<span class="badge bg-danger">REPROBADO</span>';
+            estadoBadge = '<span class="badge bg-danger"><i class="bi bi-x-circle-fill"></i> REPROBADO</span>';
         }
 
         // 'document.createElement("tr")' crea una nueva fila de tabla en memoria
@@ -234,7 +234,7 @@ function mostrarMejorEstudiante() {
     // Si todavía no hay nadie registrado en la lista, avisamos
     if (estudiantes.length === 0) {
         contenedor.className = "alert alert-warning mt-3";
-        contenedor.innerText = "No hay estudiantes registrados todavía.";
+        contenedor.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i> No hay estudiantes registrados todavía.';
         return;
     }
 
@@ -251,7 +251,7 @@ function mostrarMejorEstudiante() {
 
     // Mostramos el cartel celeste con el nombre y la nota del mejor alumno
     contenedor.className = "alert alert-info mt-3";
-    contenedor.innerText = `El mejor estudiante es ${mejor.nombre} con ${mejor.calificacion} puntos.`;
+    contenedor.innerHTML = `<i class="bi bi-trophy-fill"></i> El mejor estudiante es <strong>${mejor.nombre}</strong> con ${mejor.calificacion} puntos.`;
 }
 
 

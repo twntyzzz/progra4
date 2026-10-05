@@ -42,7 +42,7 @@
         <div class="text-end">
             <!-- REQUISITO 20: Aquí JavaScript escribe la hora actual cada 1 segundo -->
             <!-- id="reloj" sirve para que JS lo encuentre y le cambie el texto de la hora -->
-            <div id="reloj" class="fw-bold fs-5">00:00:00</div>
+            <div id="reloj" class="fw-bold fs-5"><i class="bi bi-clock"></i> 00:00:00</div>
 
             <!-- REQUISITO 18: Botón para cambiar el color de fondo -->
             <!-- onclick="cambiarFondo()" le dice: "cuando me hagan clic, ejecuta la función cambiarFondo()" -->
@@ -60,7 +60,7 @@
         <div class="row align-items-center">
             <!-- Columna izquierda: texto de presentación -->
             <div class="col-md-8">
-                <h4>Presentación del Profesor/Alumno:</h4>
+                <h4><i class="bi bi-person-badge"></i> Presentación del Profesor/Alumno:</h4>
                 <!-- REQUISITO 1: id="presentacionInicial" para que JS escriba la frase con las variables iniciales -->
                 <p id="presentacionInicial" class="lead text-primary mb-0"></p>
             </div>
@@ -70,7 +70,7 @@
                 <!-- REQUISITO 19: id="imagenEstudiante" para que JS detecte cuando pasamos el mouse por encima -->
                 <img id="imagenEstudiante" src="https://picsum.photos/200/120" alt="Estudiantes"
                     class="img-fluid rounded shadow-sm" style="cursor: pointer;">
-                <p class="small text-muted mt-1 mb-0">Pasa el mouse sobre la foto</p>
+                <p class="small text-muted mt-1 mb-0"><i class="bi bi-hand-index-thumb"></i> Pasa el mouse sobre la foto</p>
             </div>
         </div>
     </div>
@@ -91,31 +91,31 @@
             <div class="row g-3">
                 <!-- Campo para escribir el Nombre -->
                 <div class="col-md-6">
-                    <label for="nombre" class="form-label">Nombre:</label>
+                    <label for="nombre" class="form-label"><i class="bi bi-person"></i> Nombre:</label>
                     <input type="text" id="nombre" class="form-control" placeholder="Ej: Carlos">
                 </div>
 
                 <!-- Campo para escribir la Edad en números -->
                 <div class="col-md-6">
-                    <label for="edad" class="form-label">Edad:</label>
+                    <label for="edad" class="form-label"><i class="bi bi-calendar3"></i> Edad:</label>
                     <input type="number" id="edad" class="form-control" placeholder="Ej: 21">
                 </div>
 
                 <!-- Campo para escribir la Ciudad -->
                 <div class="col-md-6">
-                    <label for="ciudad" class="form-label">Ciudad:</label>
+                    <label for="ciudad" class="form-label"><i class="bi bi-geo-alt"></i> Ciudad:</label>
                     <input type="text" id="ciudad" class="form-control" placeholder="Ej: Luque">
                 </div>
 
                 <!-- Campo con calendario para elegir la Fecha de Nacimiento -->
                 <div class="col-md-6">
-                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento:</label>
+                    <label for="fechaNacimiento" class="form-label"><i class="bi bi-calendar-event"></i> Fecha de Nacimiento:</label>
                     <input type="date" id="fechaNacimiento" class="form-control">
                 </div>
 
                 <!-- Campo para la Calificación (nota de 0 a 100) -->
                 <div class="col-12">
-                    <label for="calificacion" class="form-label">Calificación (0 a 100):</label>
+                    <label for="calificacion" class="form-label"><i class="bi bi-award"></i> Calificación (0 a 100):</label>
                     <input type="number" id="calificacion" class="form-control" placeholder="Ej: 85" min="0" max="100">
                 </div>
             </div>
@@ -142,7 +142,7 @@
             <h3><i class="bi bi-table"></i> Lista de Estudiantes</h3>
             <!-- REQUISITO 6: id="totalEstudiantes" donde JS actualiza el número de alumnos registrados -->
             <span class="badge bg-dark fs-6">
-                Total de estudiantes: <span id="totalEstudiantes">0</span>
+                <i class="bi bi-people-fill"></i> Total de estudiantes: <span id="totalEstudiantes">0</span>
             </span>
         </div>
 
@@ -152,14 +152,14 @@
             <table class="table table-bordered table-striped bg-white">
                 <thead class="table-dark">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Días Vividos</th>
-                        <th>Ciudad</th>
-                        <th>Fecha Nac.</th>
-                        <th>Próx. Cumpleaños</th>
-                        <th>Calificación</th>
-                        <th>Estado</th>
+                        <th><i class="bi bi-person"></i> Nombre</th>
+                        <th><i class="bi bi-hourglass-split"></i> Edad</th>
+                        <th><i class="bi bi-sun"></i> Días Vividos</th>
+                        <th><i class="bi bi-geo-alt"></i> Ciudad</th>
+                        <th><i class="bi bi-calendar-event"></i> Fecha Nac.</th>
+                        <th><i class="bi bi-gift"></i> Próx. Cumpleaños</th>
+                        <th><i class="bi bi-star"></i> Calificación</th>
+                        <th><i class="bi bi-check2-circle"></i> Estado</th>
                     </tr>
                 </thead>
                 <!-- id="tablaEstudiantes" es el cuerpo (tbody) donde JS va a enchufar cada fila <tr> -->
@@ -190,7 +190,9 @@
                 <h5 class="mb-3"><i class="bi bi-plus-slash-minus"></i> Función Suma</h5>
                 <input type="number" id="sumaNum1" class="form-control mb-2" placeholder="Número A">
                 <input type="number" id="sumaNum2" class="form-control mb-2" placeholder="Número B">
-                <button class="btn btn-primary w-100 mb-2" onclick="ejecutarSuma()">Sumar</button>
+                <button class="btn btn-primary w-100 mb-2" onclick="ejecutarSuma()">
+                    <i class="bi bi-calculator"></i> Sumar
+                </button>
                 <p id="resultadoSuma" class="fw-bold mb-0 text-success"></p>
             </div>
         </div>
@@ -201,7 +203,9 @@
                 <h5 class="mb-3"><i class="bi bi-arrows-expand"></i> Comparar 2 Números</h5>
                 <input type="number" id="compNum1" class="form-control mb-2" placeholder="Primer número">
                 <input type="number" id="compNum2" class="form-control mb-2" placeholder="Segundo número">
-                <button class="btn btn-primary w-100 mb-2" onclick="compararNumeros()">Comparar</button>
+                <button class="btn btn-primary w-100 mb-2" onclick="compararNumeros()">
+                    <i class="bi bi-arrow-left-right"></i> Comparar
+                </button>
                 <p id="resultadoComparar" class="fw-bold mb-0 text-primary"></p>
             </div>
         </div>
@@ -211,7 +215,9 @@
             <div class="container p-3 shadow h-100 tarjeta-seccion">
                 <h5 class="mb-3"><i class="bi bi-percent"></i> Par o Impar</h5>
                 <input type="number" id="numParImpar" class="form-control mb-2" placeholder="Ingresa un número">
-                <button class="btn btn-primary w-100 mb-2" onclick="verificarParImpar()">Verificar</button>
+                <button class="btn btn-primary w-100 mb-2" onclick="verificarParImpar()">
+                    <i class="bi bi-patch-question"></i> Verificar
+                </button>
                 <p id="resultadoParImpar" class="fw-bold mb-0 text-info"></p>
             </div>
         </div>
@@ -227,10 +233,10 @@
         <div class="col-md-6">
             <div class="container p-3 shadow h-100 tarjeta-seccion">
                 <h5 class="mb-3"><i class="bi bi-arrow-repeat"></i> Bucles (FOR y WHILE)</h5>
-                <p class="mb-1"><strong>Bucle FOR (1 al 10):</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-arrow-clockwise"></i> Bucle FOR (1 al 10):</strong></p>
                 <p id="resultadoFor" class="text-muted"></p>
 
-                <p class="mb-1"><strong>Bucle WHILE (Pares del 1 al 20):</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-arrow-repeat"></i> Bucle WHILE (Pares del 1 al 20):</strong></p>
                 <p id="resultadoWhile" class="text-muted mb-0"></p>
             </div>
         </div>
@@ -239,10 +245,10 @@
         <div class="col-md-6">
             <div class="container p-3 shadow h-100 tarjeta-seccion">
                 <h5 class="mb-3"><i class="bi bi-basket"></i> Arrays y Acumuladores</h5>
-                <p class="mb-1"><strong>Array de Frutas:</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-card-list"></i> Array de Frutas:</strong></p>
                 <p id="resultadoFrutas" class="text-muted"></p>
 
-                <p class="mb-1"><strong>Suma de Array [5, 10, 15, 20]:</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-calculator"></i> Suma de Array [5, 10, 15, 20]:</strong></p>
                 <p id="resultadoSumaArray" class="text-muted mb-0"></p>
             </div>
         </div>
@@ -251,12 +257,12 @@
         <div class="col-12">
             <div class="container p-3 shadow tarjeta-seccion">
                 <h5 class="mb-3"><i class="bi bi-funnel"></i> Métodos Avanzados de Array (MAP y FILTER)</h5>
-                <p>Array original de prueba: <code>[2, 4, 6, 8, 10, 12, 15]</code></p>
+                <p><i class="bi bi-code-slash"></i> Array original de prueba: <code>[2, 4, 6, 8, 10, 12, 15]</code></p>
                 
-                <p class="mb-1"><strong>MAP (Multiplica cada número por sí mismo):</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-magic"></i> MAP (Multiplica cada número por sí mismo):</strong></p>
                 <p id="resultadoMap" class="text-primary fw-bold"></p>
 
-                <p class="mb-1"><strong>FILTER (Guarda solo los números mayores a 10):</strong></p>
+                <p class="mb-1"><strong><i class="bi bi-funnel-fill"></i> FILTER (Guarda solo los números mayores a 10):</strong></p>
                 <p id="resultadoFilter" class="text-success fw-bold mb-0"></p>
             </div>
         </div>

@@ -15,9 +15,22 @@ function iniciarJuego(){
 
     document.getElementById("alerta").className = "alert alert-info";
     document.getElementById("alerta").innerHTML = "Tienes 3 intentos para adivinar el número entre 1 y 100";
-    document.getElementById("intentosRestantes").innerText = intentos;
+    mostrarIntentos();
 
     document.getElementById("historialIntentos").innerHTML = '';
+}
+
+function mostrarIntentos() {
+    let contenedor = document.getElementById("intentosRestantes");
+    let html = "";
+    for (let i = 0; i < 3; i++) {
+        if (i < intentos) {
+            html += '<i class="bi bi-heart-fill text-danger me-1"></i>';
+        } else {
+            html += '<i class="fa-solid fa-skull text-secondary me-1"></i>';
+        }
+    }
+    contenedor.innerHTML = html;
 }
 
 
@@ -34,7 +47,7 @@ function jugar(){
     }
 
     intentos--
-    document.getElementById("intentosRestantes").innerText = intentos;
+    mostrarIntentos();
 
     if(valor === numeroAlAzar){
         alerta.className = 'alert alert-success'
