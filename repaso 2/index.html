@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Dados | Repaso 2</title>
+
+    <!-- Bootstrap 5 CSS: Hoja de estilos para botones, alertas, listas y diseño responsivo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons: Librería para íconos visuales (dados, flechas, etc.) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos específicos para la forma de los dados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="container py-4">
+
+    <!-- Contenedor principal con diseño de tarjeta centrado (idéntico a tus ejercicios) -->
+    <div class="container p-4 mt-4 shadow" style="max-width: 450px; border-radius: 10px; background-color: whitesmoke;">
+        
+        <!-- Título principal -->
+        <h2 class="text-center mb-4">
+            <i class="bi bi-dice-5"></i> Lanzador de Dados
+        </h2>
+
+        <!-- Contenedor visual de los dos dados -->
+        <div class="d-flex justify-content-center gap-4 mb-4">
+            <!-- id="dado1" para cambiar su número desde JS -->
+            <div id="dado1" class="dado-caja text-danger">
+                1
+            </div>
+            <!-- id="dado2" para cambiar su número desde JS -->
+            <div id="dado2" class="dado-caja text-primary">
+                1
+            </div>
+        </div>
+
+        <!-- Alerta donde mostramos el estado ("Lanzando..." o "Total: X") -->
+        <div id="total" class="alert alert-info text-center fw-bold fs-5 mb-3">
+            Presiona el botón para lanzar
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="d-flex gap-2 mb-3">
+            <!-- onclick="lanzar()" activa la animación y cálculo en script.js -->
+            <button id="boton" class="btn btn-success w-50 fw-bold" onclick="lanzar()">
+                <i class="bi bi-play-circle"></i> Lanzar
+            </button>
+            <!-- onclick="reiniciar()" resetea los dados y el historial -->
+            <button class="btn btn-danger w-50" onclick="reiniciar()">
+                <i class="bi bi-arrow-counterclockwise"></i> Reiniciar
+            </button>
+        </div>
+
+        <hr>
+
+        <!-- Historial de tiradas anteriores -->
+        <div class="mt-3">
+            <h6>Historial de lanzamientos:</h6>
+            <!-- id="historial" es el <ul> donde sumamos cada tirada con innerHTML += -->
+            <ul class="list-group" id="historial">
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Archivo con la lógica de los dados en JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
