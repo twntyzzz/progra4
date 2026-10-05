@@ -1,0 +1,11 @@
+/* Estilos del Panel de Estudiantes */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+.tarjeta-seccion {
+    border-radius: 10px;
+    background-color: whitesmoke;
+}

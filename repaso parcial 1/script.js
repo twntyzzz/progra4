@@ -45,7 +45,7 @@ function probar() {
     let input = document.getElementById("numero");
     let numero = parseInt(input.value);
     let mensaje = document.getElementById("mensaje");
-    let historial = document.getElementById("historial");
+    let lista = document.getElementById("historial");
 
     // ==========================================
     // VALIDACIÓN DE LA ENTRADA
@@ -62,6 +62,12 @@ function probar() {
     document.getElementById("intentos").innerText = intentos;
 
     // ==========================================
+    // CREAR ELEMENTO CON createElement() Y appendChild()
+    // ==========================================
+    let item = document.createElement("li");
+    item.className = "list-group-item";
+
+    // ==========================================
     // COMPARACIONES DEL JUEGO
     // ==========================================
 
@@ -70,8 +76,10 @@ function probar() {
         mensaje.className = "alert alert-success";
         mensaje.innerText = `¡Acertaste! El número era ${numeroSecreto}.`;
 
-        // Usamos .innerHTML += para agregar directamente la etiqueta <li> al historial
-        historial.innerHTML += `<li class="list-group-item">Intento con el ${numero} - ¡Acertaste!</li>`;
+        // Asignamos el texto al <li> creado
+        item.innerText = `Intento con el ${numero} - ¡Acertaste!`;
+        // Insertamos el <li> dentro del <ul> usando appendChild()
+        lista.appendChild(item);
 
         // Deshabilitamos los controles al ganar
         document.getElementById("btnProbar").disabled = true;
@@ -82,20 +90,23 @@ function probar() {
         if (numero > numeroSecreto) {
             mensaje.className = "alert alert-info";
             mensaje.innerText = "Te pasaste.";
-            // Sumamos el nuevo intento al historial existente con +=
-            historial.innerHTML += `<li class="list-group-item">Intento con el ${numero} - Te pasaste</li>`;
+            item.innerText = `Intento con el ${numero} - Te pasaste`;
         } else {
             mensaje.className = "alert alert-info";
             mensaje.innerText = "Te faltó.";
-            historial.innerHTML += `<li class="list-group-item">Intento con el ${numero} - Te faltó</li>`;
+            item.innerText = `Intento con el ${numero} - Te faltó`;
         }
+
+        // Agregamos el <li> al <ul> con appendChild()
+        lista.appendChild(item);
 
     // CASO 3: No acertó y se le acabaron los 3 intentos
     } else {
         mensaje.className = "alert alert-danger";
         mensaje.innerText = `No acertaste. El número era ${numeroSecreto}.`;
 
-        historial.innerHTML += `<li class="list-group-item">Intento con el ${numero} - Fallaste</li>`;
+        item.innerText = `Intento con el ${numero} - Fallaste`;
+        lista.appendChild(item);
 
         // Deshabilitamos los controles al perder
         document.getElementById("btnProbar").disabled = true;
