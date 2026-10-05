@@ -14,7 +14,7 @@ let intentos = 3;
 function iniciarJuego() {
     // Genera un número entero aleatorio entre 1 y 100
     numeroSecreto = Math.floor(Math.random() * 100) + 1;
-    
+    console.log("El numero secreto es: " + numeroSecreto);
     // Reiniciamos el contador a 3 intentos
     intentos = 3;
 
@@ -85,7 +85,7 @@ function probar() {
         document.getElementById("btnProbar").disabled = true;
         document.getElementById("numero").disabled = true;
 
-    // CASO 2: No acertó, pero todavía le quedan intentos
+        // CASO 2: No acertó, pero todavía le quedan intentos
     } else if (intentos > 0) {
         if (numero > numeroSecreto) {
             mensaje.className = "alert alert-info";
@@ -100,7 +100,7 @@ function probar() {
         // Agregamos el <li> al <ul> con appendChild()
         lista.appendChild(item);
 
-    // CASO 3: No acertó y se le acabaron los 3 intentos
+        // CASO 3: No acertó y se le acabaron los 3 intentos
     } else {
         mensaje.className = "alert alert-danger";
         mensaje.innerText = `No acertaste. El número era ${numeroSecreto}.`;
